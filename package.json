@@ -1,5 +1,5 @@
 {
-  "name": "igblade-frappe-charts",
+  "name": "@polar-media/igblade-frappe-charts",
   "version": "1.1.1",
   "description": "Forked from https://frappe.github.io/charts",
   "main": "dist/frappe-charts.min.cjs.js",
@@ -63,5 +63,9 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "transform-runtime": "0.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/polar-media/igblade-charts/issues"
+  },
+  "homepage": "https://github.com/polar-media/igblade-charts#readme"
 }
