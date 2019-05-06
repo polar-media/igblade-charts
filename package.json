@@ -1,7 +1,7 @@
 {
-  "name": "frappe-charts",
-  "version": "1.1.0",
-  "description": "https://frappe.github.io/charts",
+  "name": "igblade-frappe-charts",
+  "version": "1.1.1",
+  "description": "Forked from https://frappe.github.io/charts",
   "main": "dist/frappe-charts.min.cjs.js",
   "module": "dist/frappe-charts.min.esm.js",
   "src": "dist/frappe-charts.esm.js",
@@ -19,18 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frappe/charts.git"
+    "url": "git+https://github.com/polar-media/igblade-charts.git"
   },
   "keywords": [
     "\"js",
     "charts\""
   ],
-  "author": "Prateeksha Singh",
+  "author": "Prateeksha Singh, Szoke Peter",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/frappe/charts/issues"
-  },
-  "homepage": "https://github.com/frappe/charts#readme",
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "babel-core": "^6.26.0",

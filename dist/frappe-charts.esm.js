@@ -173,6 +173,16 @@ const DEFAULT_COLORS = {
 const ANGLE_RATIO = Math.PI / 180;
 const FULL_ANGLE = 360;
 
+const formatNumber = (value) => {
+	if (typeof value !== 'number') {
+		return '--';
+	}
+
+	value = Math.round(value * 100) / 100;
+
+	return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
 class SvgTip {
 	constructor({
 		parent = null,
@@ -226,6 +236,7 @@ class SvgTip {
 		if(this.index) {
 			this.container.setAttribute('data-point-index', this.index);
 		}
+
 		if(this.titleValueFirst) {
 			title = `<strong>${this.titleValue}</strong>${this.titleName}`;
 		} else {
@@ -237,6 +248,8 @@ class SvgTip {
 		this.listValues.map((set, i) => {
 			const color = this.colors[i] || 'black';
 			let value = set.formatted === 0 || set.formatted ? set.formatted : set.value;
+
+			value = formatNumber(value);
 
 			let li = $.create('li', {
 				styles: {
@@ -298,10 +311,6 @@ class SvgTip {
 	}
 }
 
-/**
- * Returns the value of a number upto 2 decimal places.
- * @param {Number} d Any number
- */
 function floatTwo(d) {
 	return parseFloat(d.toFixed(2));
 }
@@ -3697,7 +3706,6 @@ class AxisChart extends BaseChart {
 	// removeDataPoint(index = 0) {}
 }
 
-// import MultiAxisChart from './charts/MultiAxisChart';
 const chartTypes = {
 	bar: AxisChart,
 	line: AxisChart,

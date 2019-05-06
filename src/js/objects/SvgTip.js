@@ -1,6 +1,16 @@
 import { $ } from '../utils/dom';
 import { TOOLTIP_POINTER_TRIANGLE_HEIGHT } from '../utils/constants';
 
+const formatNumber = (value) => {
+	if (typeof value !== 'number') {
+		return '--';
+	}
+
+	value = Math.round(value * 100) / 100;
+
+	return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
 export default class SvgTip {
 	constructor({
 		parent = null,
@@ -54,6 +64,7 @@ export default class SvgTip {
 		if(this.index) {
 			this.container.setAttribute('data-point-index', this.index);
 		}
+
 		if(this.titleValueFirst) {
 			title = `<strong>${this.titleValue}</strong>${this.titleName}`;
 		} else {
@@ -65,6 +76,8 @@ export default class SvgTip {
 		this.listValues.map((set, i) => {
 			const color = this.colors[i] || 'black';
 			let value = set.formatted === 0 || set.formatted ? set.formatted : set.value;
+
+			value = formatNumber(value);
 
 			let li = $.create('li', {
 				styles: {
