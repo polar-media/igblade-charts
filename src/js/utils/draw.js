@@ -323,7 +323,7 @@ function makeHoriLine(y, label, x1, x2, options={}) {
 		dy: (FONT_SIZE / 2 - 2) + 'px',
 		'font-size': FONT_SIZE + 'px',
 		'text-anchor': x1 < x2 ? 'end' : 'start',
-		innerHTML: nFormatter(label)
+		innerHTML: nFormatter(label, 2)
 	});
 
 	let line = createSVG('g', {

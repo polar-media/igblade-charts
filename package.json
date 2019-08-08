@@ -1,6 +1,6 @@
 {
   "name": "@polar-media/igblade-frappe-charts",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Forked from https://frappe.github.io/charts",
   "main": "dist/frappe-charts.min.cjs.js",
   "module": "dist/frappe-charts.min.esm.js",
